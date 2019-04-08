@@ -1,0 +1,50 @@
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1")
+    
+    title e|town - #{title}
+    
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,700" type="text/css")
+    link(rel="stylesheet" href="https://cloud.typography.com/7903216/6177192/css/fonts.css" type="text/css")
+  
+  body
+    header
+      a(href="/")
+        img(src="/image.png")
+
+      nav
+        li
+          a(href="/") About
+          a(href="/menu") Menu
+          a(href="/blog") Blog
+          a(href="/contact") Contact
+          a(href="/shop") Shop
+
+    block content
+
+    aside
+      block aside
+
+      section
+        h3 earn more about what's new at e|town.
+        a(href="/post")
+
+    footer
+      form(action="")
+        h4 Sign up for our newsletter
+        input(type="email" placeholder="name@email.com")
+        button Sign up
+      
+      nav
+        li
+          a(href="/") About
+          a(href="/menu") Menu
+          a(href="/blog") Blog
+          a(href="/contact") Contact
+          a(href="/shop") Shop
+      
+      ul
+        li
+          a(href="facebook") Facebook
+          a(href="twitter") Twitter
