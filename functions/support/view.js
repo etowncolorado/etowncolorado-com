@@ -1,13 +1,15 @@
 const pug = require('pug')
+const pretty = require('pretty')
 
-exports.pug = function(base)
-{   
-    base = base ? base + '/' : ''
-
-    return function (id, context)
-    {
-        var path = id.replace('.', '/')
-
-        return pug.renderFile(base + path + '.pug', context)
-    }
+exports.pretty = function(value) {
+  return pretty(value, { ocd: true })
 }
+
+exports.pug = (folder) => {
+  return (id, context) => {
+    var path = id.replace('.', '/') + '.pug'
+
+    return pug.renderFile(folder(path), context)
+  }
+}
+

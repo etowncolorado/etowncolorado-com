@@ -1,7 +1,16 @@
-const { pug } = require('./support/view.js')
 
-const view = pug('../views')
+const { pretty, pug } = require('./support/view.js')
+const { folder, write } = require('./support/filesystem.js')
 
-console.log(view('template', {
-    title: 'Timothy'
-}));
+const views = folder(__dirname + '/../views')
+const public = folder(__dirname + '/../public')
+
+const view = pug(views)
+const save = write(public)
+
+const html = view('template', {
+  title: 'Timothy'
+})
+
+save('pug.html', pretty(html))
+
